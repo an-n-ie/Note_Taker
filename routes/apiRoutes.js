@@ -10,17 +10,12 @@ router.get("/api/notes", (req,res)=>{
 router.post("/api/notes",(req,res)=>{
 
     console.log(req.body);
+    let newNote = req.body;
+    notes.push(newNote);
+    updateDb();
+    return console.log("Added new note: "+newNote.title);
 
-    const { title, text } = req.body;
-
- 
-    if (title && text ) {
-      const newNote = {
-        title,
-        text,
-      };
-
- }})
+ })
 
 //  create DELETE
 // router.delete(`/api/notes/${id}`,(req,res)=>{
